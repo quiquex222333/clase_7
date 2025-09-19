@@ -9,7 +9,9 @@ class InventoryPage:
         return self.page.locator(self.list).is_visible()
 
     def add_item(self, slug: str):
-        self.page.click(f"button[data-test='add-to-cart-{slug}']")
+        locator = f"button[data-test='add-to-cart-{slug}']"
+        print(locator)
+        self.page.click(locator)
 
     def open_cart(self):
         self.page.click(self.cart_icon)
